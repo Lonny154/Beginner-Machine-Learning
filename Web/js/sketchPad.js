@@ -20,7 +20,7 @@ class SketchPad{
     #addEventListeners(){
         this.canvas.onmousedown=(evt)=>{
             const mouse = this.#getMouse(evt);
-            this.path.push=([mouse]);
+            this.paths.push=([mouse]);
             this.isDrawing=true;
         }
         this.canvas.onmousemove=(evt)=>{
@@ -33,6 +33,17 @@ class SketchPad{
         }
         this.canvas.onmouseup=()=>{
             this.isDrawing=false;
+        }
+        this.canvas.ontouchstart=(evt)=>{
+            const loc=evt.touches[0];
+            this.canvas.onmousedown(loc);
+        }
+        this.canvas.ontouchmove=(evt)=>{
+            const loc = evt.touches[0];
+            this.canvas.onmousemove(loc);
+        }
+        this.canvas.ontouchend=()=>{
+            this.canvas.onmouseup();
         }
     }
 

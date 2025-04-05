@@ -3,6 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width,
         maximum-scale=0.9, user-scalable=0">
+        <meta charset="UTF-8">
         <title>Data Creator</title>
         <link rel="stylesheet" href="styles.css"/>
     </head>
@@ -23,9 +24,26 @@
         </div>
         <script src="js/draw.js"></script>
         <script src="js/sketchPad.js"></script>
+
         <script>
+            const data={
+                student:null,
+                session: new Date().getTime(),
+                drawings:{}
+            };
+
             const sketchPad=
                 new SketchPad(sketchPadContainer);
+
+            function start(){
+                if(student.value==""){
+                    alert("Please type your name first!");
+                    return;
+                }
+                data.student=student.value;
+                student.style.display="none";
+                sketchPadContainer.style.visibility="visible";
+            }    
         </script>
     </body>
 </html>

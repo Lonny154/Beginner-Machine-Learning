@@ -18,13 +18,17 @@ class SketchPad{
 
         this.ctx = this.canvas.getContext("2d");
 
+        this.reset();
+
+        this.#addEventListeners();
+    }
+
+    reset(){
         this.paths=[];
         this.isDrawing=false;
         this.#redraw();
-
-        this.#addEventListeners();
-
     }
+
     #addEventListeners(){
         this.canvas.onmousedown=(evt)=>{
             const mouse = this.#getMouse(evt);

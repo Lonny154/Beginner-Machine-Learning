@@ -14,7 +14,7 @@ draw.path=(ctx,path,color="black")=>{
 }
 
 draw.paths=(ctx,paths,color="black")=>{
-    for(const path in paths){
+    for(const path of paths){
         draw.path(ctx,path,color);
     }
 }

@@ -32,7 +32,7 @@ class SketchPad{
     #addEventListeners(){
         this.canvas.onmousedown=(evt)=>{
             const mouse = this.#getMouse(evt);
-            this.paths.push=([mouse]);
+            this.paths.push([mouse]);
             this.isDrawing=true;
         }
         this.canvas.onmousemove=(evt)=>{

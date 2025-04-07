@@ -16,10 +16,10 @@ fileNames.forEach(fn=>{
         constants.RAW_DIR+"/"+fn
     );
     const {session,student,drawings} = JSON.parse(content);
-    for(let lable in drawings){
+    for(let label in drawings){
         samples.push({
             id,
-            lable,
+            label,
             student_name:student,
             student_id:session
         });
